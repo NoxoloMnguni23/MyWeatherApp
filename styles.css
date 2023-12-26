@@ -12,13 +12,37 @@
     align-items: center;
     background: linear-gradient(to right,(rgb(230, 198, 222)),to left,(rgb(212, 71, 149)));
     border: 1px solid #fff;
+    padding: 15px;
     outline: none;
     box-sizing: border-box;
-    background-color: #d6cfcfe8
+    background-color: #d6cfcfe8;
+
 }
-.searchBtn{
-    background-color: palevioletred;
+
+.search input {
+    border: 0;
+    outline: 0;
+    background: white;
+    color: rgb(180, 42, 146);
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 50px;
+    font-size: 15;
+
 }
-.search input text {
-    font-weight: 900;
+.search button{
+    border: 0;
+    outline: 0;
+    border-radius: 100%;
+    max-width: 10;
+   
+
+    
+}
+.search img{
+    border-radius: 30px;
+    width: 90px;
+    height: 70px;
+    border: 1px solid #5f5a5a;
+    
 }
