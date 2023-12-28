@@ -36,3 +36,26 @@ function getWeather() {
 
         });
 }
+function displayWeather(data){
+    const tempatureInfo = document.getElementById('tempature');
+    const weather = document.getElementById('weather-details');
+    const hourlyforecast = document.getElementById('hourly');
+    const weatherIcon = document.getElementById('weather-icon');
+
+    weather.innerHTML = '';
+    hourlyforecast.innerHTML = '';
+    tempatureInfo.innerHTML = '';
+     
+    if(data.cod === '404'){
+        weather.innerHTML = `<p>${data.message}</p>`;
+    }
+    else{
+        const cityName = data.name;
+        const tempature = Math.round(data.main.temp - 273.15);
+        const description = data.weather[0].description;
+        const iconCode = data.weather[0].icon;
+        const iconUrl = `http://openweathermap.org/img/wn/${iconCode}@4x.png`;
+
+        const tempatureHTML = `<p>${tempature}`
+    }
+}
