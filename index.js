@@ -31,7 +31,6 @@ function getWeather() {
         const weatherIcon = document.getElementById('weather-icon');
 
         weather.innerHTML = '';
-        hourlyforecast.innerHTML = '';
         tempatureInfo.innerHTML = '';
 
         if (data.cod === '404') {
