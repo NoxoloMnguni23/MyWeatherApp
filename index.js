@@ -28,7 +28,6 @@ function getWeather() {
     function displayWeather(data) {
         const tempatureInfo = document.getElementById('tempature');
         const weather = document.getElementById('weather-details');
-        const hourlyforecast = document.getElementById('hourly');
         const weatherIcon = document.getElementById('weather-icon');
 
         weather.innerHTML = '';
