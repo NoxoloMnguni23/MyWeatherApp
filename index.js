@@ -21,7 +21,7 @@ function getWeather() {
         })
         .catch(error => {
             console.log('Error fetching current weather data', error);
-            console.log(data.list);
+    
 
         });
 
