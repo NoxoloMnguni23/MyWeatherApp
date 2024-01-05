@@ -15,7 +15,7 @@ function getWeather() {
     fetch(currentWeatherUrl)
         .then(Response => Response.json())
         .then(data => {
-            console.log(data)
+
             displayWeather(data);
 
         })
