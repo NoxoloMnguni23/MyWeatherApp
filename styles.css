@@ -1,5 +1,6 @@
 body{
-    background-color: #494646e8;
+    
+    background-color: white;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -7,22 +8,24 @@ body{
     justify-content: center;
     align-items: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
-    color: #5f5a5a;
+    color: #fff;
 }
 
 #weather-container{
-    background: #fff;
+    background-image: url('/gif.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
     max-width: 400px;
     padding: 20px;
     border-radius: 15px;
     border-radius: 15 px;
-    box-shadow: 0 8px 32px rgba(#fff, grey, rgb(240, 21, 57), alpha);
-    border: 2px solid rgb(180, 42, 146);
-    text-align: center;
+    box-shadow: 0 8px 32px rgba(#fff, grey, rgb(1, 9, 44), alpha);
+    border: 2px solid rgb(44, 10, 121);
+    /*text-align: center;*/
 }
 
 h2, label ,p{
-    color: #5f5a5a;
+    color: #fff;
     margin: 8px 0;
 }
 input{
@@ -30,7 +33,7 @@ input{
     padding: 8px;
     box-sizing: border-box;
     border-radius: 10px;
-    border: 1px solid rgb(180, 42, 146);
+    border: 2px solid rgb(44, 10, 121);
     margin-top: 20px;
 }
 
@@ -42,11 +45,11 @@ button {
     margin-top: 20px;
     width: 100px;
     font-size: 15px;
-    color: #5f5a5a;
+    color:#0808086b;
 }
 
 button:hover{
-    background: rgb(240, 161, 220);;
+    background: #496db1;
 }
 
 #tempature-d p{
@@ -58,11 +61,39 @@ button:hover{
     width: 200px;
 }
 
+#date{
+    font-size: 17px;
+    margin-top: 30px;
+    color: #fff;
+    text-align: end;
+}
+#time{
+    font-size: 17px;
+    margin-top: 30px;
+    color: #fff;
+    text-align: end;
+}
+
 #weather-icon{
     width: 200px;
     height: 200px;
     margin: 0 auto 10px;
     margin-bottom: 0;
     display: none;
+}
+#hourly-forecast{
+    color: #fff;
+    /*background: #496db1;*/
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 15px;
+    border-radius: 15 px;
+    box-shadow: 0 8px 32px rgba(#fff, grey, rgb(1, 9, 44), alpha);
+    border: 2px solid rgb(44, 10, 121);
+    margin-top : 246pt; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
