@@ -3,13 +3,14 @@ function getWeather() {
     const city = document.getElementById('location').value;
 
 
+
     if (!city) {
         alert('Please enter a location')
         return;
     }
 
     const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
 
 
     fetch(currentWeatherUrl)
@@ -24,6 +25,20 @@ function getWeather() {
 
 
         });
+
+    fetch(forecastUrl)
+        .then(Response => Response.json())
+        .then(data => {
+
+            hourlyforecast(data.list);
+
+        })
+        .catch(error => {
+            console.log('Error fetching current weather forecas data', error);
+
+
+        });
+
 
 
     function displayWeather(data) {
@@ -44,7 +59,7 @@ function getWeather() {
             const description = data.weather[0].description;
             const iconCode = data.weather[0].icon;
             const iconUrl = `http://openweathermap.org/img/wn/${iconCode}@4x.png`;
-            //const timezone1 = data.timezone.id;
+            const timezone1 = data.timezone;
 
 
 
@@ -56,7 +71,7 @@ function getWeather() {
             weatherIcon.src = iconUrl;
             weatherIcon.alert = description;
 
-            getDate();
+            getDate(timezone1);
             showImage();
             hourlyforecast(data);
         }
@@ -67,30 +82,28 @@ function getWeather() {
     }
 
 
-    function getDate() {
+    function getDate(timezone1) {
 
-        document.getElementById('date').innerHTML = new Date();
-        //const currentDateTime = new Intl.DateTimeFormat("en-US", {timeZone: `${timezone1}`, timeStyle: 'short', hour12: true}).format(date);
-        //document.getElementById('time').innerHTML = currentDateTime;
-        //document.getElementById('date').innerHTML = new Date().toDateString("en-US", { timeZone: `${timezone1}`, timeStyle: 'medium', hourCyle: 'h24' });
+        const currentDateTime = new Date().toDateString("en-US", { timeZone: `${timezone1}`, timeStyle: 'medium', hourCyle: 'h24' });
+        document.getElementById('time').innerHTML = currentDateTime;
     }
+    getDate();
 
     function hourlyforecast(data) {
 
-        let now = new Date().getHours();
-        let time1 = now + 1;
-        let time2 = time1 + 1;
-        //let time3 = time2 + 1;
+        let hourNow = data.list.weather.dt_txt[0];
+        let hour1 =  data.list.weather.dt_txt[1].temp;
+        let hour2 =  data.list.weather.dt_txt[2].temp;
+        let hour3 =  data.list.weather.dt_txt[3].temp;
+
+    
 
 
-        const hour1 = data.hourly[1].temp;
-        const hour2 = data.hourly[2].temp;
-        const hour3 = data.hourly[3].temp;
+        document.getElementById("hour-now").innerHTML =`<p>${hourNow}°C</p>`;
+        document.getElementById("hour-one").innerHTML =`<p>${hour1}°C</p>`;
+        document.getElementById("hour-two").innerHTML =`<p>${hour2}°C</p>`;
+        document.getElementById("hour-three").innerHTML =`<p>${hour3}°C</p>`;
 
 
-        document.getElementById("hour-one").innerHTML = hour1 + "°C";
-        document.getElementById("hour-two").innerHTML = hour2 + "°C";
-        document.getElementById("hour-three").innerHTML = hour3 + "°C";
-
-
-    }}
+    }
+}

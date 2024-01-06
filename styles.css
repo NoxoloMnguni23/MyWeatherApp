@@ -81,19 +81,12 @@ button:hover{
     margin-bottom: 0;
     display: none;
 }
-#hourly-forecast{
+
+#hour-now,#hour-one,#hour-two,#hour-tree p{
     color: #fff;
-    /*background: #496db1;*/
-    max-width: 400px;
-    padding: 20px;
-    border-radius: 15px;
-    border-radius: 15 px;
-    box-shadow: 0 8px 32px rgba(#fff, grey, rgb(1, 9, 44), alpha);
-    border: 2px solid rgb(44, 10, 121);
-    margin-top : 246pt; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 60px;
     
+
 }
+
 
