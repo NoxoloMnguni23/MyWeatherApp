@@ -92,9 +92,9 @@ function getWeather() {
     function hourlyforecast(data) {
 
         let hourNow = data.list.weather.dt_txt[0];
-        let hour1 =  data.list.weather.dt_txt[1].temp;
-        let hour2 =  data.list.weather.dt_txt[2].temp;
-        let hour3 =  data.list.weather.dt_txt[3].temp;
+        let hour1 =  data.list.weather.dt_txt[1];
+        let hour2 =  data.list.weather.dt_txt[2];
+        let hour3 =  data.list.weather.dt_txt[3];
 
     
 
