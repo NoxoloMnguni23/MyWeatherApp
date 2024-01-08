@@ -55,6 +55,7 @@ button:hover{
 #tempature-d p{
     font-size: 60px;
     margin-top: -30px;
+    color: #fff;
 }
 
 #weather-details{
@@ -84,7 +85,6 @@ button:hover{
 
 #hour-now,#hour-one,#hour-two,#hour-tree p{
     color: #fff;
-    font-size: 60px;
     
 }
 

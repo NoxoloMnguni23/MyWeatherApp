@@ -31,6 +31,7 @@ function getWeather() {
         .then(data => {
 
             hourlyforecast(data.list);
+            console.log(data.list);
 
         })
         .catch(error => {
@@ -73,7 +74,6 @@ function getWeather() {
 
             getDate(timezone1);
             showImage();
-            hourlyforecast(data);
         }
     }
     function showImage() {
@@ -91,13 +91,11 @@ function getWeather() {
 
     function hourlyforecast(data) {
 
-        let hourNow = data.list.weather.dt_txt[0];
-        let hour1 =  data.list.weather.dt_txt[1];
-        let hour2 =  data.list.weather.dt_txt[2];
-        let hour3 =  data.list.weather.dt_txt[3];
-
+        let hourNow = data[0].dt_txt.substr(11, 8);
+        let hour1 =  data[1].dt_txt.substr(11, 8);
+        let hour2 =  data[2].dt_txt.substr(11, 8);
+        let hour3 =  data[3].dt_txt.substr(11, 8);
     
-
 
         document.getElementById("hour-now").innerHTML =`<p>${hourNow}°C</p>`;
         document.getElementById("hour-one").innerHTML =`<p>${hour1}°C</p>`;
@@ -106,4 +104,6 @@ function getWeather() {
 
 
     }
+    // hourlyforecast(data);
+
 }
