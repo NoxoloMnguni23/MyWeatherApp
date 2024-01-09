@@ -92,15 +92,22 @@ function getWeather() {
     function hourlyforecast(data) {
 
         let hourNow = data[0].dt_txt.substr(11, 8);
-        let hour1 =  data[1].dt_txt.substr(11, 8);
-        let hour2 =  data[2].dt_txt.substr(11, 8);
-        let hour3 =  data[3].dt_txt.substr(11, 8);
-    
+        let hour1 = data[1].dt_txt.substr(11, 8);
+        let hour2 = data[2].dt_txt.substr(11, 8);
+        let hour3 = data[3].dt_txt.substr(11, 8);
 
-        document.getElementById("hour-now").innerHTML =`<p>${hourNow}°C</p>`;
-        document.getElementById("hour-one").innerHTML =`<p>${hour1}°C</p>`;
-        document.getElementById("hour-two").innerHTML =`<p>${hour2}°C</p>`;
-        document.getElementById("hour-three").innerHTML =`<p>${hour3}°C</p>`;
+        let hourNowTemp = Math.round(data[0].main.temp - 273.15);
+        let hour1Temp = Math.round(data[1].main.temp - 273.15);
+        let hour2Temp = Math.round(data[2].main.temp - 273.15);
+        let hour3Temp = Math.round(data[3].main.temp - 273.15);
+
+        // <p>${Math.round(data.main.temp - 273.15)}°C</p>`
+
+
+        document.getElementById("hour-now").innerHTML = `Time:${hourNow} ${hourNowTemp}°C`;
+        document.getElementById("hour-one").innerHTML = `Time:${hour1} ${hour1Temp}°C`;
+        document.getElementById("hour-two").innerHTML = `Time:${hour2} ${hour2Temp}°C`;
+        document.getElementById("hour-three").innerHTML = `Time:${hour3} ${hour3Temp}°C`;
 
 
     }
